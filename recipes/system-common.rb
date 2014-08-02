@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: server-base
-# Recipe:: default
+# Recipe:: system-common
 #
 # Copyright (C) 2014 Pulselocker, Inc.
 #
@@ -17,6 +17,10 @@
 # limitations under the License.
 #
 
-include_recipe 'server-base::system-common'
-include_recipe 'server-base::python-support'
-include_recipe 'server-base::ruby-support'
+# Install the common components required on all servers
+include_recipe 'apt'
+include_recipe 'openssh'
+include_recipe 'ntp'
+include_recipe 'rsyslog::default'
+include_recipe 'build-essential'
+include_recipe 'zip'
