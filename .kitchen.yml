@@ -11,5 +11,5 @@ platforms:
 
 suites:
   - name: default
-    run_list: recipe[server-base::ruby-support]
+    run_list: recipe[server-base::default]
     attributes:

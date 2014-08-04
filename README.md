@@ -1,27 +1,11 @@
-# server-base-cookbook
+SERVER-BASE COOKBOOK
+====================
 
-TODO: Enter the cookbook description here.
+This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
-
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['server-base']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+Supported platforms: Ubuntu 12.04 and 14.04.
 
 ## Usage
 
@@ -48,4 +32,4 @@ Include `server-base` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: Pulselocker, Inc. (<sean@pulselocker.com>)
+Author:: Sean M. Sullivan - Pulselocker, Inc. (<sean@pulselocker.com>)
