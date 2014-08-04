@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: server-base
-# Recipe:: default
+# Recipe:: system-common
 #
 # Copyright (C) 2014 Pulselocker, Inc.
 #
@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
-include_recipe 'server-base::system-common'
-include_recipe 'server-base::python-support'
-include_recipe 'server-base::ruby-support'
+default['ntp']['servers'] = [
+    "0.pool.ntp.org",
+    "1.pool.ntp.org",
+    "2.pool.ntp.org"
+]

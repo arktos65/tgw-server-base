@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: server-base
-# Recipe:: default
+# Recipe:: python-support
 #
 # Copyright (C) 2014 Pulselocker, Inc.
 #
@@ -17,6 +17,5 @@
 # limitations under the License.
 #
 
-include_recipe 'server-base::system-common'
-include_recipe 'server-base::python-support'
-include_recipe 'server-base::ruby-support'
+include_recipe "apt"
+include_recipe "python"
