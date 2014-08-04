@@ -7,6 +7,14 @@ This wrapper cookbook installs packages required on Linux servers.
 
 Supported platforms: Ubuntu 12.04 and 14.04.
 
+## Attributes
+
+The behavior of the upstream cookbooks is controlled by attributes.  You may see what the default values are by
+studying the files in the attributes directory.
+
+* `['python']['version']` - Set the version of Python to install.
+* `[ntp']['servers']` - An array of NTP server pool names.
+
 ## Usage
 
 ### server-base::default
