@@ -4,7 +4,7 @@ maintainer_email 'sean@pulselocker.com'
 license          'Apache 2.0'
 description      'Installs/Configures server-base'
 long_description 'Installs/Configures server-base'
-version          '0.1.0'
+version          '1.0.0'
 
 recipe 'server-base', 'Default recipe installs all base packages for a Linux server.'
 recipe 'server-base::system-common', 'Common packages and tools for Linux servers.'
