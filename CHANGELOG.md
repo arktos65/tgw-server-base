@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.0.2
+-----
+- Bug fixes.
+- Changed networking_basic cookbook to networking-basic cookbook, maintained by Pulselocker.
+
 1.0.1
 -----
 - Moved dependency version control to Berksfile.
