@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.0.3 (15-Mar-2016)
+-------------------
+- Updated travis.yml to include Ruby 2.2.1 to support latest version of `foodcritic` gem.
+- Made changes to support `foodcritic` 6.x.
+
 1.0.2
 -----
 - Bug fixes.

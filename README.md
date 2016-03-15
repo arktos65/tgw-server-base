@@ -7,7 +7,7 @@ This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
 
-Supported platforms: Ubuntu 12.04 and 14.04.
+Supported platforms: Ubuntu 14.04.
 
 ## Attributes
 
@@ -45,7 +45,7 @@ License & Authors
 - Author:: Sean M. Sullivan (<sean@pulselocker.com>)
 
 ```text
-Copyright:: 2014 Pulselocker, Inc.
+Copyright:: 2014-2016 Pulselocker, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
