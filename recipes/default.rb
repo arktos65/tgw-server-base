@@ -20,3 +20,4 @@
 include_recipe 'server-base::system-common'
 include_recipe 'server-base::python-support'
 include_recipe 'server-base::ruby-support'
+include_recipe 'server-base::dnsmasq'

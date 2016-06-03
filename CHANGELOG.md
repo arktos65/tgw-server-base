@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.1.0 (03-Jun-2016)
+-------------------
+- Add local DNS cache.
+
 1.0.3 (15-Mar-2016)
 -------------------
 - Updated travis.yml to include Ruby 2.2.1 to support latest version of `foodcritic` gem.
