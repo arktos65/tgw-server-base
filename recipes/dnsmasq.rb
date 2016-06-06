@@ -1,7 +1,10 @@
-bash "install_dnsmasq" do
-  code <<-EOH
-    sudo apt-get install dnsmasq -y
-  EOH
+apt_package 'dnsmasq' do
+  action :install
+end
+
+service 'dnsmasq' do
+  action [ :enable, :start ]
+  supports :status => true, :start => true, :stop => true, :restart => true
 end
 
 cookbook_file '/etc/dnsmasq.conf' do
@@ -10,8 +13,5 @@ cookbook_file '/etc/dnsmasq.conf' do
   group 'root'
   mode 0644
   action :create
-end
-
-service "dnsmasq" do
-  action :restart
+  notifies :restart, 'service[dnsmasq]', :immediately
 end
