@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.1.1 (17-Jun-2016)
+-------------------
+- Do not install DNS cache by default.
+
 1.1.0 (03-Jun-2016)
 -------------------
 - Add local DNS cache.
