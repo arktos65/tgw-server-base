@@ -1,6 +1,14 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.2.0 (09-Feb-2017)
+-------------------
+- Added support for Ubuntu 16.04 OS.
+- Deprecated support of Ubuntu 12.04.
+- Bumped `build-essential` cookbook version.
+- Bumped `ruby_build` cookbook version.
+- Deprecated `python` cookbook in favor of `poise-python`. 
+
 1.1.1 (17-Jun-2016)
 -------------------
 - Do not install DNS cache by default.

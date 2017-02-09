@@ -2,7 +2,7 @@
 # Cookbook Name:: server-base
 # Recipe:: python-support
 #
-# Copyright (C) 2014 Pulselocker, Inc.
+# Copyright (C) 2014-2017 Pulselocker, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,4 +18,4 @@
 #
 
 include_recipe "apt"
-include_recipe "python"
+include_recipe "poise-python"
