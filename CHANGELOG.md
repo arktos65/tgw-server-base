@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.2.1 (11-May-2017)
+-------------------
+- Require Chef Omnibus 12.x package for backwards compatibility in Kitchen Test.
+
 1.2.0 (09-Feb-2017)
 -------------------
 - Added support for Ubuntu 16.04 OS.
