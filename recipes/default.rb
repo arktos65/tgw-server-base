@@ -17,6 +17,10 @@
 # limitations under the License.
 #
 
+# Force APT UPDATE during compile phase
+node.override['apt']['compile_time_update'] = true
+
+# Runlist of recipes
 include_recipe 'server-base::system-common'
 include_recipe 'server-base::python-support'
 include_recipe 'server-base::ruby-support'
