@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+1.2.2 (16-May-2017)
+-------------------
+- Enable APT update during compile time of cookbook.
+- Rolled back Python to use `python` cookbook instead of `poise-python`.
+
 1.2.1 (11-May-2017)
 -------------------
 - Require Chef Omnibus 12.x package for backwards compatibility in Kitchen Test.

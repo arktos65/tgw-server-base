@@ -18,4 +18,4 @@
 #
 
 include_recipe "apt"
-include_recipe "poise-python"
+include_recipe "python"
