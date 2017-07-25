@@ -21,5 +21,4 @@ default['server-base']['install_dnsmasq'] = false
 
 # Python environment
 default['server-base']['python2']['install'] = true
-default['server-base']['python3']['install'] = false
-
+default['server-base']['python3']['install'] = true

@@ -45,7 +45,7 @@ License & Authors
 - Author:: Sean M. Sullivan (<sean@pulselocker.com>)
 
 ```text
-Copyright:: 2014-2016 Pulselocker, Inc.
+Copyright:: 2014-2017 Pulselocker, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

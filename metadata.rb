@@ -4,7 +4,7 @@ maintainer_email 'sean@pulselocker.com'
 license          'Apache 2.0'
 description      'Installs/Configures server-base'
 long_description 'Installs/Configures server-base'
-version          '1.2.2'
+version          '2.0.0'
 issues_url       'https://github.com/arktos65/server-base-cookbook/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/arktos65/server-base-cookbook' if respond_to?(:source_url)
 
@@ -22,4 +22,4 @@ depends 'build-essential'
 depends 'ruby_build'
 depends 'rake'
 depends 'zip'
-depends 'python'
+depends 'poise-python'
