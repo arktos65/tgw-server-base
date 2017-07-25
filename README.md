@@ -16,7 +16,7 @@ studying the files in the attributes directory.
 
 * `node['server-base']['python2']['install']` - Install Python 2 runtime.
 * `node['server-base']['python3']['install']` - Install Python 3 runtime.
-* `[ntp']['servers']` - An array of NTP server pool names.
+* `node[ntp']['servers']` - An array of NTP server pool names.
 
 ## Usage
 
