@@ -14,7 +14,8 @@ Supported platforms: Ubuntu 14.04/16.04 LTS, Chef 12.x (13 IS NOT SUPPORTED)
 The behavior of the upstream cookbooks is controlled by attributes.  You may see what the default values are by
 studying the files in the attributes directory.
 
-* `['python']['version']` - Set the version of Python to install.
+* `node['server-base']['python2']['install']` - Install Python 2 runtime.
+* `node['server-base']['python3']['install']` - Install Python 3 runtime.
 * `[ntp']['servers']` - An array of NTP server pool names.
 
 ## Usage
