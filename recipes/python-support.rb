@@ -17,5 +17,14 @@
 # limitations under the License.
 #
 
-include_recipe "apt"
-include_recipe "python"
+# Set installation requirements via attributes
+node.override['poise-python']['install_python2'] = node['server-base']['python2']['install']
+node.override['poise-python']['install_python3'] = node['server-base']['python3']['install']
+
+# Update APT packages
+include_recipe 'apt'
+
+# Install Python environment
+include_recipe 'poise-python'
+
+
