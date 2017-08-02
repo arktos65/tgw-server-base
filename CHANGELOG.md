@@ -5,6 +5,7 @@ SERVER-BASE CHANGELOG
 -------------------
 - Deprecated `python` cookbook in favor of `poise-python`. 
 - Added support for installing Python 3 installations.
+- Added `openssh` cookbook dependency.
 
 1.2.2 (16-May-2017)
 -------------------
