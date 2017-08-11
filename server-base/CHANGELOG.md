@@ -1,6 +1,12 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.1.0 (11-Aug-2017)
+-------------------
+- Restructured cookbook to support Travis/Docker integration tests.
+- Added Travis/Docker integration testing.
+- Pinned cookbook versions for: `openssh`, `rsyslog`, `ntp`, and `apt`.
+
 2.0.0 (24-Jul-2017)
 -------------------
 - Deprecated `python` cookbook in favor of `poise-python`. 
