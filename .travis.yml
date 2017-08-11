@@ -35,6 +35,8 @@ before_script:
   - /opt/chefdk/embedded/bin/foodcritic --version
 
 script:
+  # Prepare OpenSSH environment to work around error when using Docker
+  - mkdir /var/run/sshd
   # Run index to make some tetchy gems work
   - bundle --full-index
   # Test suite
