@@ -1,6 +1,7 @@
 ---
 driver:
   name: docker
+  dockerfile: test/Dockerfile
 
 provisioner:
   name: chef_solo
