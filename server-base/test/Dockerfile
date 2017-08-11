@@ -17,3 +17,7 @@ RUN mkdir -p /var/run/sshd
 #RUN chmod 0600 /home/<%= @username %>/.ssh/authorized_keys
 #RUN curl -L https://www.chef.io/chef/install.sh | bash
 #RUN echo '<%= IO.read(@public_key).strip %>' >> /home/<%= @username %>/.ssh/authorized_keys
+
+EXPOSE 22
+
+CMD /usr/sbin/sshd -D
