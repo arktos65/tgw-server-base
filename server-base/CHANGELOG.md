@@ -5,6 +5,7 @@ SERVER-BASE CHANGELOG
 -------------------
 - Restructured cookbook to support Travis/Docker integration tests.
 - Added Travis/Docker integration testing.
+- Pinned cookbook versions for: `openssh`, `rsyslog`, `ntp`, and `apt`.
 
 2.0.0 (24-Jul-2017)
 -------------------
