@@ -3,8 +3,8 @@ FROM ubuntu:trusty
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install openssh-server -y
-RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N -q ''
+RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N -q ''
 RUN echo 'OPTIONS="-o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes"' >> /etc/sysconfig/sshd
 RUN mkdir -p /var/run/sshd
 RUN service ssh restart
