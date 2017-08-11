@@ -3,8 +3,8 @@ FROM ubuntu:trusty
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install openssh-server -y
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
-RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
+#RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+#RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN mkdir -p /var/run/sshd
 RUN useradd -d /home/<%= @username %> -m -s /bin/bash <%= @username %>
 RUN echo <%= "#{@username}:#{@password}" %> | chpasswd
