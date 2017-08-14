@@ -21,3 +21,6 @@ RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
 RUN curl -L https://www.chef.io/chef/install.sh | bash
 #RUN echo '<%= IO.read(@public_key).strip %>' >> /home/kitchen/.ssh/authorized_keys
 
+EXPOSE 22
+
+CMD sudo service ssh restart
