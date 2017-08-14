@@ -1,7 +1,8 @@
 ---
 driver:
   name: docker
-  dockerfile: test/Dockerfile
+#  dockerfile: test/Dockerfile
+  provision_command: mkdir -p /var/run/sshd | bash
 
 provisioner:
   name: chef_solo
@@ -9,7 +10,6 @@ provisioner:
 
 platforms:
   - name: ubuntu-14.04
-  - name: ubuntu-16.04
 
 suites:
   - name: default
