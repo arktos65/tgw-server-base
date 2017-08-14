@@ -2,6 +2,7 @@
 driver:
   name: docker
 #  dockerfile: test/Dockerfile
+  provision_command: mkdir -p /var/run/sshd | bash
 
 provisioner:
   name: chef_solo
