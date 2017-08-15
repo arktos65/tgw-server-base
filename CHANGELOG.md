@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.1.1 (15-Aug-2017)
+-------------------
+- Removed old `.travis.yml` file no longer used.
+- Restructured cookbook directory to get it working with Berkshelf.
+
 2.1.0 (11-Aug-2017)
 -------------------
 - Restructured cookbook to support Travis/Docker integration tests.
