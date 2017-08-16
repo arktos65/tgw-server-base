@@ -5,6 +5,7 @@ AllCops:
     - lib/kitchen/driver/*
     - lib/kitchen/driver/docker/*
     - Vagrantfile
+    - berks-cookbooks/*
   TargetRubyVersion: 2.3
 AlignParameters:
   Enabled: false

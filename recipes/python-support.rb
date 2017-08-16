@@ -27,4 +27,3 @@ include_recipe 'apt'
 # Install Python environment
 include_recipe 'poise-python'
 
-
