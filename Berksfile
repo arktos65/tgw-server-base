@@ -1,4 +1,5 @@
-source "https://supermarket.us-west.pulselocker.cloud"
+source 'https://supermarket.us-west.pulselocker.cloud'
+source 'https://supermarket.chef.io'
 
 metadata
 
