@@ -4,6 +4,7 @@ SERVER-BASE CHANGELOG
 2.1.2 (16-Aug-2017)
 -------------------
 - Deprecated `networking-basic` cookbook.
+- Bumped version of `build-essential` cookbook.
 
 2.1.1 (15-Aug-2017)
 -------------------
