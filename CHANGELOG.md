@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.1.3 (16-Oct-2017)
+-------------------
+- [APPA-522] Fixed issue with dpkg overwriting configuration file.
+- Added `$ rake linter` task for linter testing only.
+
 2.1.2 (16-Aug-2017)
 -------------------
 - Deprecated `networking-basic` cookbook.

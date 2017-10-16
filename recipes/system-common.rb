@@ -17,6 +17,18 @@
 # limitations under the License.
 #
 
+# Force dpkg to not overwrite configuration files - and don't ask anything
+file '/etc/apt/apt.conf.d/force_confdef' do
+  owner 'root'
+  group 'root'
+  mode '0644'
+  content 'Dpkg::Options {
+   "--force-confdef";
+   "--force-confold";
+}'
+  action :create
+end
+
 # Install the common components required on all servers
 include_recipe 'apt'
 include_recipe 'openssh'
