@@ -1,6 +1,12 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.2.0 (08-Feb-2018)
+-------------------
+- Changed maintainer information.
+- Removed Chef 12 requirement
+- Updated dependent package versions.
+
 2.1.3 (16-Oct-2017)
 -------------------
 - [APPA-522] Fixed issue with dpkg overwriting configuration file.

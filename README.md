@@ -43,10 +43,11 @@ Include `server-base` in your node's `run_list`:
 
 License & Authors
 -----------------
-- Author:: Sean M. Sullivan (<sean@pulselocker.com>)
+- Author:: Sean M. Sullivan (<sean@tgwconsulting.co>)
 
 ```text
 Copyright:: 2014-2017 Pulselocker, Inc.
+Copyright:: 2018 TGW Consulting, LLC.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
