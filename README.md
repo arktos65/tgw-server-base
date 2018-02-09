@@ -7,7 +7,7 @@ This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
 
-Supported platforms: Ubuntu 14.04/16.04 LTS, Chef 12
+Supported platforms: Ubuntu 14.04/16.04 LTS, Chef 12/13
 
 ## Attributes
 
