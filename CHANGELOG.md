@@ -6,7 +6,7 @@ SERVER-BASE CHANGELOG
 - Updated gem package versions in Gemfile
 - [CVE-2017-9050] Addressed Nokogiri vulnerability
 - Code cleanup per Rubocop recommendations
-
+- Replaced Travis Test Kitchen with Dokken.
 
 2.2.0 (08-Feb-2018)
 -------------------
