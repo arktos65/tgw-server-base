@@ -44,7 +44,7 @@ namespace :integration do
     if run_kitchen
       Kitchen.logger = Kitchen.default_file_logger
       @loader =
-          Kitchen::Loader::YAML.new(project_config: './.kitchen.travis.yml')
+          Kitchen::Loader::YAML.new(project_config: './.kitchen.dokken.yml')
       config = Kitchen::Config.new(loader: @loader)
       config.instances.each do |instance|
         begin
