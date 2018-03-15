@@ -1,6 +1,13 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.2.1 (14-Mar-2018)
+-------------------
+- Updated gem package versions in Gemfile
+- [CVE-2017-9050] Addressed Nokogiri vulnerability
+- Code cleanup per Rubocop recommendations
+
+
 2.2.0 (08-Feb-2018)
 -------------------
 - Changed maintainer information.
