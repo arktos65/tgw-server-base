@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.3.0 (23-May-2018)
+-------------------
+- Added support for Redhat Enterprise Linux 7, CentOS 7, Scientific Linux 7
+
 2.2.1 (14-Mar-2018)
 -------------------
 - Updated gem package versions in Gemfile
