@@ -10,6 +10,7 @@ DEPENDENCIES
   server-base
     path: .
     metadata: true
+  yum
   zip
 
 GRAPH
@@ -48,9 +49,11 @@ GRAPH
     rake (~> 0.1.1)
     rsyslog (~> 6.0.4)
     ruby_build (~> 1.1.0)
+    yum (~> 5.1.0)
     zip (~> 1.1.0)
   seven_zip (3.0.0)
     windows (>= 0.0.0)
   windows (4.2.2)
+  yum (5.1.0)
   yum-epel (3.1.0)
   zip (1.1.0)
