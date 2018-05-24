@@ -4,11 +4,14 @@ maintainer_email 'sean@tgwconsulting.co'
 license          'Apache-2.0'
 description      'Installs/Configures server-base'
 long_description 'Installs/Configures server-base'
-version          '2.3.0'
+version          '2.3.1'
 issues_url       'https://github.com/arktos65/server-base-cookbook/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/arktos65/server-base-cookbook' if respond_to?(:source_url)
-supports         'ubuntu', '>= 14.04'
 chef_version     '>= 12'
+
+['debian', 'ubuntu', 'centos', 'fedora', 'redhat', 'scientific'].each do |os|
+  supports os
+end
 
 # Recipes that can be used
 recipe 'server-base', 'Default recipe installs all base packages for a Linux server.'

@@ -40,7 +40,7 @@ GRAPH
   ruby_build (1.1.0)
     git (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  server-base (2.3.0)
+  server-base (2.3.1)
     apt (~> 7.0.0)
     build-essential (~> 8.1.1)
     ntp (~> 3.5.6)
