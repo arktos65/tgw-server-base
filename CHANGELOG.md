@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.3.1 (24-May-2018)
+-------------------
+- Updated metadata.rb with supported OSes.
+- Changed provisioner attributes in .kitchen.yml file.
+
 2.3.0 (23-May-2018)
 -------------------
 - Added support for Redhat Enterprise Linux 7, CentOS 7, Scientific Linux 7

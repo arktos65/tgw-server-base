@@ -17,8 +17,8 @@
 # limitations under the License.
 #
 
-case node['platform']
-when 'debian', 'ubuntu'
+case node['platform_family']
+when 'debian'
   # Force dpkg to not overwrite configuration files - and don't ask anything
   file '/etc/apt/apt.conf.d/force_confdef' do
     owner 'root'
@@ -31,7 +31,7 @@ when 'debian', 'ubuntu'
     action :create
   end
   include_recipe 'apt'
-when 'redhat', 'centos', 'fedora'
+when 'rhel'
   include_recipe 'yum'
 end
 
