@@ -1,6 +1,12 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.3.0 (23-May-2018)
+-------------------
+- Added support for Redhat Enterprise Linux 7, CentOS 7, Scientific Linux 7
+- Dropped Ubuntu 14.04 from test suites
+- Added CentOS 7 to test suites
+
 2.2.1 (14-Mar-2018)
 -------------------
 - Updated gem package versions in Gemfile

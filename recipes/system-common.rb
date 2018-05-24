@@ -17,20 +17,25 @@
 # limitations under the License.
 #
 
-# Force dpkg to not overwrite configuration files - and don't ask anything
-file '/etc/apt/apt.conf.d/force_confdef' do
-  owner 'root'
-  group 'root'
-  mode '0644'
-  content 'Dpkg::Options {
+case node['platform']
+when 'debian', 'ubuntu'
+  # Force dpkg to not overwrite configuration files - and don't ask anything
+  file '/etc/apt/apt.conf.d/force_confdef' do
+    owner 'root'
+    group 'root'
+    mode '0644'
+    content 'Dpkg::Options {
    "--force-confdef";
    "--force-confold";
 }'
-  action :create
+    action :create
+  end
+  include_recipe 'apt'
+when 'redhat', 'centos', 'fedora'
+  include_recipe 'yum'
 end
 
 # Install the common components required on all servers
-include_recipe 'apt'
 include_recipe 'openssh'
 include_recipe 'ntp'
 include_recipe 'rsyslog::default'
