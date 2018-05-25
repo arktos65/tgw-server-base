@@ -5,6 +5,7 @@ SERVER-BASE CHANGELOG
 -------------------
 - Updated metadata.rb with supported OSes.
 - Changed provisioner attributes in .kitchen.yml file.
+- Added `stove` gem simplifying cookbook publishing to Chef Supermarket.
 
 2.3.0 (23-May-2018)
 -------------------

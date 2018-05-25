@@ -8,6 +8,7 @@ gem 'public_suffix', '= 2.0.4'
 gem 'rake'
 gem 'rspec'
 gem 'rubocop'
+gem 'stove'
 gem 'thor', '< 0.19.3'
 
 group :travis do

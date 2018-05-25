@@ -51,6 +51,9 @@ GEM
       specinfra (~> 2.10)
       syslog-logger (~> 1.6)
       uuidtools (~> 2.1.5)
+    chef-api (0.8.0)
+      logify (~> 0.1)
+      mime-types
     chef-config (14.1.12)
       addressable
       fuzzyurl
@@ -115,6 +118,10 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
+    logify (0.2.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitar (0.6.1)
     mixlib-archive (0.4.6)
@@ -221,6 +228,9 @@ GEM
       net-ssh (>= 2.7, < 5.0)
       net-telnet
       sfl
+    stove (6.0.0)
+      chef-api (~> 0.5)
+      logify (~> 0.2)
     syslog-logger (1.6.8)
     systemu (2.6.5)
     test-kitchen (1.20.0)
@@ -272,6 +282,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  stove
   test-kitchen (~> 1.20.0)
   thor (< 0.19.3)
   vagrant-wrapper
