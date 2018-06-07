@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'kitchen'
 require 'net/ssh'
 require 'bundler/setup'

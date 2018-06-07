@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: server-base
 # Recipe:: default
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,6 +21,7 @@
 #
 
 default['server-base']['install_dnsmasq'] = false
+default['server-base']['install_chef_client'] = false
 
 # Python environment
 default['server-base']['python2']['install'] = true

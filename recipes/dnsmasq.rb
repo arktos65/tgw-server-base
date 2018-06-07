@@ -3,6 +3,7 @@
 # Recipe:: dnsmasq
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,12 +18,12 @@
 # limitations under the License.
 #
 
-apt_package 'dnsmasq' do
+package 'dnsmasq' do
   action :install
 end
 
 service 'dnsmasq' do
-  action [ :enable, :start ]
+  action [:enable, :start]
   supports :status => true, :start => true, :stop => true, :restart => true
 end
 
