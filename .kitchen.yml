@@ -15,3 +15,6 @@ suites:
   - name: default
     run_list: recipe[server-base::default]
     attributes:
+      server-base:
+        install_dnsmasq: true
+        install_chef_client: true

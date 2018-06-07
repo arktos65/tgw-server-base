@@ -2,7 +2,7 @@
 
 #
 # Cookbook Name:: server-base
-# Recipe:: python-support
+# Recipe:: client
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
 # Copyright (C) 2018 TGW Consulting, LLC.
@@ -20,12 +20,4 @@
 # limitations under the License.
 #
 
-# Set installation requirements via attributes
-node.override['poise-python']['install_python2'] = node['server-base']['python2']['install']
-node.override['poise-python']['install_python3'] = node['server-base']['python3']['install']
-
-# Update APT packages
-include_recipe 'apt'
-
-# Install Python environment
-include_recipe 'poise-python'
+include_recipe 'chef-client'

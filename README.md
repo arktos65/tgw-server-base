@@ -7,16 +7,19 @@ This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
 
-Supported platforms: Ubuntu 14.04/16.04 LTS, Chef 12/13
+Supported platforms: Ubuntu 14.04/16.04 LTS, RedHat Enterprise Linux 7, Chef 12/13
 
 ## Attributes
 
 The behavior of the upstream cookbooks is controlled by attributes.  You may see what the default values are by
 studying the files in the attributes directory.
 
-* `node['server-base']['python2']['install']` - Install Python 2 runtime.
-* `node['server-base']['python3']['install']` - Install Python 3 runtime.
-* `node[ntp']['servers']` - An array of NTP server pool names.
+|Attribute   |Default Value   |Description   |
+|---|---|---|
+| node['server-base']['python2']['install'] | true | Installs Python 2.x interpreter. |
+| node['server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
+| node['server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
+| node['server-base']['install_chef_client'] | falase | Installs and configures chef-client as a service if true. |
 
 ## Usage
 

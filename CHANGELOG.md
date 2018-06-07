@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.3.2 (06-Jun-2018)
+-------------------
+- Added `chef-client` cookbook and configured for regular automated run of chef-client on target host.
+- Fixed bug in `dnsmasq` recipe to support yum packages in addition to apt.
+
 2.3.1 (24-May-2018)
 -------------------
 - Updated metadata.rb with supported OSes.
