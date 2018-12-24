@@ -24,6 +24,9 @@
 node.override['poise-python']['install_python2'] = node['server-base']['python2']['install']
 node.override['poise-python']['install_python3'] = node['server-base']['python3']['install']
 
+# Workaround for poise-python v1.7 cookbook bug
+node.override['poise-python']['options']['pip_version'] = "18.0"
+
 # Update APT packages
 include_recipe 'apt'
 

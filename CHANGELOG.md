@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.3.3 (24-Dec-2018)
+-------------------
+- Resolved vulnerabilities with `rack` and `nokogiri` gems by upgrading to new versions.
+
 2.3.2 (06-Jun-2018)
 -------------------
 - Added `chef-client` cookbook and configured for regular automated run of chef-client on target host.

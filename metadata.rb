@@ -2,9 +2,9 @@ name             'server-base'
 maintainer       'TGW Consulting, LLC'
 maintainer_email 'sean@tgwconsulting.co'
 license          'Apache-2.0'
-description      'Installs/Configures server-base'
-long_description 'Installs/Configures server-base'
-version          '2.3.2'
+description      'Installs/Configures base server environment'
+long_description 'Installs/Configures base server environment'
+version          '2.3.3'
 issues_url       'https://github.com/arktos65/server-base-cookbook/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/arktos65/server-base-cookbook' if respond_to?(:source_url)
 chef_version     '>= 12'
