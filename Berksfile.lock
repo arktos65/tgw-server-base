@@ -46,7 +46,7 @@ GRAPH
   ruby_build (1.1.0)
     git (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  server-base (2.3.3)
+  server-base (2.3.4)
     apt (>= 0.0.0)
     build-essential (>= 0.0.0)
     chef-client (>= 0.0.0)

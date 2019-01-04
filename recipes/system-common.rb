@@ -44,3 +44,9 @@ include_recipe 'ntp'
 include_recipe 'rsyslog::default'
 include_recipe 'build-essential'
 include_recipe 'zip'
+
+if node['platform_family'] == 'rhel'
+  package 'net-tools' do
+    action :install
+  end
+end
