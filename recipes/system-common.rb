@@ -50,4 +50,3 @@ if node['platform_family'] == 'rhel'
     action :install
   end
 end
-
