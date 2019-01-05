@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.4.0 (05-Jan-2019)
+-------------------
+- Install `kubelet`, `kubeadm`, and `kubectl` on Debian and RHEL systems.
+- Updated Travis CI to include testing `kubernetes` recipe.
+
 2.3.4 (04-Jan-2019)
 -------------------
 - Install `net-tools` package on RHEL systems.

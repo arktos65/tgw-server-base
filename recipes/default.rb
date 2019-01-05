@@ -35,3 +35,7 @@ end
 if node['server-base']['install_chef_client']
   include_recipe 'server-base::client'
 end
+
+if node['server-base']['install_kubeadm']
+  include_recipe 'server-base::kubernetes'
+end

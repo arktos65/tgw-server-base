@@ -19,7 +19,8 @@ studying the files in the attributes directory.
 | node['server-base']['python2']['install'] | true | Installs Python 2.x interpreter. |
 | node['server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
 | node['server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
-| node['server-base']['install_chef_client'] | falase | Installs and configures chef-client as a service if true. |
+| node['server-base']['install_chef_client'] | false | Installs and configures chef-client as a service if true. |
+| node['server-base']['install_kubeadm'] | false | Installs kubelet, kubeadm, and kubectl if true. |
 
 ## Usage
 
