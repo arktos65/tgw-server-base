@@ -22,7 +22,11 @@
 
 default['server-base']['install_dnsmasq'] = false
 default['server-base']['install_chef_client'] = false
+default['server-base']['install_kubeadm'] = false
 
 # Python environment
 default['server-base']['python2']['install'] = true
 default['server-base']['python3']['install'] = true
+
+# Testing overrides
+default['server-base']['skip_selinux'] = false

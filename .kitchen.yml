@@ -18,3 +18,4 @@ suites:
       server-base:
         install_dnsmasq: true
         install_chef_client: true
+        install_kubeadm: true
