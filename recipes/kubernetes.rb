@@ -58,6 +58,7 @@ when 'rhel'
     setenforce 0
     sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
     EOH
+    only_if node['server-base']['skip_selinux']
   end
   package %w(kubelet kubeadm kubectl) do
     action :install
