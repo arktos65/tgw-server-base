@@ -10,6 +10,7 @@ gem 'rspec'
 gem 'rubocop'
 gem 'stove'
 gem 'thor', '~> 0.20.3'
+gem 'nokogiri', '~> 1.10', '>= 1.10.2'
 
 group :travis do
   gem 'test-kitchen', '~> 1.23', '>= 1.23.5'
