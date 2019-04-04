@@ -1,6 +1,10 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.4.1 (02-Apr-2019)
+-------------------
+- Resolve CVE-2018-14404 in `nokogiri` gem.
+
 2.4.0 (05-Jan-2019)
 -------------------
 - Install `kubelet`, `kubeadm`, and `kubectl` on Debian and RHEL systems.
