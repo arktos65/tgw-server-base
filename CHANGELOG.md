@@ -1,6 +1,13 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.4.2 (22-Jan-2020)
+-------------------
+- Resolve CVE-2019-5477 in `nokogiri` gem.
+- Updated `kitchen-vagrant` gem to v1.6.1.
+- Updated `test-kitchen` gem to v2.3.4.
+- Updated `public_suffix` gem to v4.0.3.
+
 2.4.1 (02-Apr-2019)
 -------------------
 - Resolve CVE-2018-14404 in `nokogiri` gem.
