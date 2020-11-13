@@ -1,6 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
+2.5.0 (13-Nov-2020)
+-------------------
+- Refactored Ruby environment recipe to use ruby_build.
+- Added New Relic infrastructure installer.
+
 2.4.2 (22-Jan-2020)
 -------------------
 - Resolve CVE-2019-5477 in `nokogiri` gem.

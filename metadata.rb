@@ -4,10 +4,10 @@ maintainer_email 'sean@tgwconsulting.co'
 license          'Apache-2.0'
 description      'Installs/Configures base server environment'
 long_description 'Installs/Configures base server environment'
-version          '2.4.2'
+version          '2.5.0'
 issues_url       'https://github.com/arktos65/server-base-cookbook/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/arktos65/server-base-cookbook' if respond_to?(:source_url)
-chef_version     '>= 12'
+chef_version     '>= 13'
 
 ['debian', 'ubuntu', 'centos', 'fedora', 'redhat', 'scientific'].each do |os|
   supports os
@@ -26,7 +26,9 @@ depends 'openssh'
 depends 'ntp'
 depends 'rsyslog'
 depends 'build-essential'
+depends 'ruby_rbenv'
 depends 'ruby_build'
+depends 'newrelic_infra'
 depends 'rake'
 depends 'zip'
 depends 'poise-python'
