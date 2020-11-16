@@ -22,7 +22,6 @@
 
 default['server-base']['install_dnsmasq'] = false
 default['server-base']['install_chef_client'] = false
-default['server-base']['install_kubeadm'] = false
 
 # Python environment
 default['server-base']['python2']['install'] = true
@@ -38,4 +37,3 @@ default['server-base']['skip_selinux'] = false
 # New Relic
 default['server-base']['new_relic']['install'] = true
 default['server-base']['new_relic']['key'] = 'replace me'
-

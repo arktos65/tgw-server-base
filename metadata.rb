@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 name             'server-base'
 maintainer       'TGW Consulting, LLC'
 maintainer_email 'sean@tgwconsulting.co'
@@ -9,7 +11,7 @@ issues_url       'https://github.com/arktos65/server-base-cookbook/issues' if re
 source_url       'https://github.com/arktos65/server-base-cookbook' if respond_to?(:source_url)
 chef_version     '>= 13'
 
-['debian', 'ubuntu', 'centos', 'fedora', 'redhat', 'scientific'].each do |os|
+%w[debian ubuntu centos fedora redhat scientific].each do |os|
   supports os
 end
 

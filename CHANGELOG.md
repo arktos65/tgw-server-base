@@ -1,10 +1,11 @@
 SERVER-BASE CHANGELOG
 =====================
 
-2.5.0 (13-Nov-2020)
+2.5.0 (18-Nov-2020)
 -------------------
 - Refactored Ruby environment recipe to use ruby_build.
 - Added New Relic infrastructure installer.
+- Deprecated `kubernetes` recipe as it's replaced with another cookbook.
 
 2.4.2 (22-Jan-2020)
 -------------------

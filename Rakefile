@@ -14,8 +14,8 @@ namespace :style do
   desc 'Run Chef style checks'
   FoodCritic::Rake::LintTask.new(:chef) do |t|
     t.options = {
-        fail_tags: ['any'],
-        tags: ['~FC064', '~FC065', '~FC007', '~FC122']
+      fail_tags: ['any'],
+      tags: ['~FC064', '~FC065', '~FC007', '~FC122']
     }
   end
 end
@@ -46,18 +46,14 @@ namespace :integration do
     if run_kitchen
       Kitchen.logger = Kitchen.default_file_logger
       @loader =
-          Kitchen::Loader::YAML.new(project_config: './.kitchen.dokken.yml')
+        Kitchen::Loader::YAML.new(project_config: './.kitchen.dokken.yml')
       config = Kitchen::Config.new(loader: @loader)
       config.instances.each do |instance|
-        begin
-          instance.test(:passing)
-        rescue
-          destroy_on_failure = !ENV.fetch('NO_DESTROY_ON_FAILURE', false)
-          if destroy_on_failure && instance.last_action.to_s != 'destroy'
-            instance.destroy
-          end
-          raise
-        end
+        instance.test(:passing)
+      rescue StandardError
+        destroy_on_failure = !ENV.fetch('NO_DESTROY_ON_FAILURE', false)
+        instance.destroy if destroy_on_failure && instance.last_action.to_s != 'destroy'
+        raise
       end
     end
   end
@@ -70,4 +66,4 @@ task travis: ['style', 'spec', 'integration:cloud']
 task default: ['style', 'spec', 'local:vagrant']
 
 # Linter
-task linter: ['style', 'spec']
+task linter: %w[style spec]
