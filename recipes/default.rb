@@ -28,14 +28,6 @@ include_recipe 'server-base::system-common'
 include_recipe 'server-base::python-support'
 include_recipe 'server-base::ruby-support'
 
-if node['server-base']['install_dnsmasq']
-  include_recipe 'server-base::dnsmasq'
-end
+include_recipe 'server-base::dnsmasq' if node['server-base']['install_dnsmasq']
 
-if node['server-base']['install_chef_client']
-  include_recipe 'server-base::client'
-end
-
-if node['server-base']['install_kubeadm']
-  include_recipe 'server-base::kubernetes'
-end
+include_recipe 'server-base::client' if node['server-base']['install_chef_client']

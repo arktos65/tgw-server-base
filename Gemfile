@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'berkshelf'
 gem 'docker'
 gem 'foodcritic'
 gem 'kitchen-dokken'
-gem 'public_suffix', '~> 4.0', '>= 4.0.3'
-gem 'rake'
+gem "nokogiri"
+gem 'public_suffix'
+gem "rake"
 gem 'rspec'
 gem 'rubocop'
 gem 'stove'
-gem 'thor', '~> 0.20.3'
-gem 'nokogiri', '~> 1.10', '>= 1.10.4'
+gem 'thor'
 
 group :travis do
-  gem 'test-kitchen', '~> 2.3', '>= 2.3.4'
+  gem 'test-kitchen'
 end
 
 group :local do
-  gem 'kitchen-vagrant', '~> 1.6', '>= 1.6.1'
+  gem 'kitchen-vagrant'
   gem 'vagrant-wrapper'
 end

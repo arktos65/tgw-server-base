@@ -25,15 +25,15 @@ package 'dnsmasq' do
 end
 
 service 'dnsmasq' do
-  action [:enable, :start]
-  supports :status => true, :start => true, :stop => true, :restart => true
+  action %i[enable start]
+  supports status: true, start: true, stop: true, restart: true
 end
 
 cookbook_file '/etc/dnsmasq.conf' do
   source 'dnsmasq.conf'
   owner 'root'
   group 'root'
-  mode 0644
+  mode 0o644
   action :create
   notifies :restart, 'service[dnsmasq]', :immediately
 end
