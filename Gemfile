@@ -6,9 +6,9 @@ gem 'berkshelf'
 gem 'docker'
 gem 'foodcritic'
 gem 'kitchen-dokken'
-gem 'nokogiri'
+gem "nokogiri"
 gem 'public_suffix'
-gem 'rake'
+gem "rake"
 gem 'rspec'
 gem 'rubocop'
 gem 'stove'
