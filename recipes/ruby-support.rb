@@ -21,5 +21,10 @@
 #
 
 include_recipe "apt"
-include_recipe "ruby_build"
+
+# Install and configure runtime environment dependencies
+# rbenv_system_install 'system'
+ruby_build_install node['server-base']['ruby']['build']
+ruby_build_definition node['server-base']['ruby']['version']
+
 include_recipe "rake"
