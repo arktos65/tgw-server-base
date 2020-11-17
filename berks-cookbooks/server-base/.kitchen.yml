@@ -4,13 +4,18 @@ driver:
 
 provisioner:
   name: chef_solo
-  require_chef_omnibus: 12
+  product_name: chef
+  product_version: 13
 
 platforms:
-  - name: ubuntu-14.04
   - name: ubuntu-16.04
+  - name: centos-7
 
 suites:
   - name: default
     run_list: recipe[server-base::default]
     attributes:
+      server-base:
+        install_dnsmasq: true
+        install_chef_client: true
+        install_kubeadm: true

@@ -7,16 +7,22 @@ This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
 
-Supported platforms: Ubuntu 14.04/16.04 LTS, Chef 12
+Supported platforms: Ubuntu 16.04/18.04 LTS, RedHat Enterprise Linux 7, Chef 13/14/15
 
 ## Attributes
 
 The behavior of the upstream cookbooks is controlled by attributes.  You may see what the default values are by
 studying the files in the attributes directory.
 
-* `node['server-base']['python2']['install']` - Install Python 2 runtime.
-* `node['server-base']['python3']['install']` - Install Python 3 runtime.
-* `node[ntp']['servers']` - An array of NTP server pool names.
+|Attribute   |Default Value   |Description   |
+|---|---|---|
+| node['server-base']['python2']['install'] | true | Installs Python 2.x interpreter. |
+| node['server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
+| node['server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
+| node['server-base']['install_chef_client'] | false | Installs and configures chef-client as a service if true. |
+| node['server-base']['ruby']['version'] | 2.6.6 | Version of Ruby interpreter to install. |
+| node['server-base']['new_relic']['install'] | false | Install New Relic infrastructure agent. |
+| node['server-base']['new_relic']['key'] | replace me | Override with your private New Relic key. |
 
 ## Usage
 
@@ -43,10 +49,11 @@ Include `server-base` in your node's `run_list`:
 
 License & Authors
 -----------------
-- Author:: Sean M. Sullivan (<sean@pulselocker.com>)
+- Author:: Sean M. Sullivan (<sean@tgwconsulting.co>)
 
 ```text
 Copyright:: 2014-2017 Pulselocker, Inc.
+Copyright:: 2018-2020 TGW Consulting, LLC.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

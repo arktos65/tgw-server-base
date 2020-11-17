@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: server-base
 # Recipe:: system-common
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +20,33 @@
 # limitations under the License.
 #
 
+case node['platform_family']
+when 'debian'
+  # Force dpkg to not overwrite configuration files - and don't ask anything
+  file '/etc/apt/apt.conf.d/force_confdef' do
+    owner 'root'
+    group 'root'
+    mode '0644'
+    content 'Dpkg::Options {
+   "--force-confdef";
+   "--force-confold";
+}'
+    action :create
+  end
+  include_recipe 'apt'
+when 'rhel'
+  include_recipe 'yum'
+end
+
 # Install the common components required on all servers
-include_recipe 'apt'
 include_recipe 'openssh'
 include_recipe 'ntp'
 include_recipe 'rsyslog::default'
 include_recipe 'build-essential'
 include_recipe 'zip'
-include_recipe 'networking-basic'
+
+if node['platform_family'] == 'rhel'
+  package 'net-tools' do
+    action :install
+  end
+end

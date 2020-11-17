@@ -2,6 +2,78 @@
 
 This file is used to list changes made in each version of the openssh cookbook.
 
+## 2.8.1 (2019-10-03)
+
+- Expand platform testing to the latest platforms - [@tas50](https://github.com/tas50)
+- Move template files out of the default directory - [@tas50](https://github.com/tas50)
+- Remove deprecated recipe and long_description metadata - [@tas50](https://github.com/tas50)
+- Remove EOL opensuse platform from the metadata - [@tas50](https://github.com/tas50)
+- Cookstyle fixes in the library - [@tas50](https://github.com/tas50)
+- Add RHEL 8 docker container support - [@tas50](https://github.com/tas50)
+
+## 2.8.0 (2019-05-06)
+
+- This release greatly improves the default attributes on openSUSE/SLES systems
+- Update test kitchen config - [@tas50](https://github.com/tas50)
+- Add code owners file - [@tas50](https://github.com/tas50)
+- Cookstyle fixes - [@tas50](https://github.com/tas50)
+- Remove testing of EOL Ubuntu 14.04 - [@tas50](https://github.com/tas50)
+- Move the service name to a helper - [@tas50](https://github.com/tas50)
+- Fix the roaming test for Amazon Linux 2 - [@tas50](https://github.com/tas50)
+- Add opensuseleap 15 testing and Chef 14 testing - [@tas50](https://github.com/tas50)
+- Disable roaming on SLES 15 as well - [@tas50](https://github.com/tas50)
+- Support generating ssh keys in opensuse 15 containers - [@tas50](https://github.com/tas50)
+- Move use_roaming attribute default logic to a helper - [@tas50](https://github.com/tas50)
+- Configure the subystem properly on SUSE platform family - [@tas50](https://github.com/tas50)
+- Move ssh host key determination to a helper with SLES 15 support - [@tas50](https://github.com/tas50)
+- Make sure we return true when supported - [@tas50](https://github.com/tas50)
+- Modernize the specs for the new ChefSpec release - [@tas50](https://github.com/tas50)
+- Add platform version helpers for readability - [@tas50](https://github.com/tas50)
+- Default specs to 18.04 - [@tas50](https://github.com/tas50)
+- Avoid FC warning - [@tas50](https://github.com/tas50)
+- Disable opensuse 15 testing for now - [@tas50](https://github.com/tas50)
+
+## 2.7.1 (2018-11-01)
+
+- Add support for multiple subsystems
+- Use template verify property instead of notify to handle configuration verification so we don't ever template out a non-functional config
+
+## 2.7.0 (2018-07-24)
+
+- Add support for array values under a host hash and added indentation for host values
+
+## 2.6.3 (2018-03-19)
+
+- Support Amazon Linux 2 in containers
+
+## 2.6.2 (2018-03-02)
+
+- Swap Chef 12 testing for Chef 14 testing
+- Create the privilege separation directory on debian/ubuntu, which is not always there on Docker images
+- Add Ubuntu 18.04 testing
+
+## 2.6.1 (2017-11-30)
+
+- Generate missing ssh keys on amazon linux as well. This impacts containers where ssh keys have not already been generated
+
+## 2.6.0 (2017-10-18)
+
+- Fixed trusted user CA key documentation
+- Collapse the smartos hostkey attributes into the centos 6 attributes since they were the same values
+- Make sure the hostkey attribute works when RHEL 8 comes out by not constraining the version check too much
+- Run sshd-keygen on Fedora / CentOS 7 when host keys are missing. Why would keys be missing? Well if you've never run sshd then you don't have keys on RHEL/Fedora. This happens primarily when you try to Chef a container
+- Add Testing on Chef 12 to Travis so we test both 12 and 13
+- Move the flat helper methods into an actual library that is properly loaded
+
+## 2.5.0 (2017-09-16)
+
+- Added TrustedUserCAKeys and RevokedKeys support
+- Enabled Foodcritic FC024 again
+- Generate keys on systemd boxes before validating configs by starting sshd-keygen service if it exists. This prevents failures in docker
+- Use multipackage installs to install client/server packages to speed up the chef run
+- Add Debian 9 testing in Travis
+- Add more platforms to Chefspecs, avoid deprecation warnings, and greatly speed up specs
+
 ## 2.4.1 (2017-05-22)
 
 - Fix a bug that resulted in RHEL 6 cert paths being incorrect and expanded testing to check ssh login behavior not just config validation.

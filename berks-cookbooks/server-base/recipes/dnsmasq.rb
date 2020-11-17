@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: server-base
 # Recipe:: dnsmasq
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,20 +20,20 @@
 # limitations under the License.
 #
 
-apt_package 'dnsmasq' do
+package 'dnsmasq' do
   action :install
 end
 
 service 'dnsmasq' do
-  action [ :enable, :start ]
-  supports :status => true, :start => true, :stop => true, :restart => true
+  action %i[enable start]
+  supports status: true, start: true, stop: true, restart: true
 end
 
 cookbook_file '/etc/dnsmasq.conf' do
   source 'dnsmasq.conf'
   owner 'root'
   group 'root'
-  mode 0644
+  mode 0o644
   action :create
   notifies :restart, 'service[dnsmasq]', :immediately
 end

@@ -2,7 +2,7 @@
 # Cookbook:: iptables
 # Recipe:: default
 #
-# Copyright:: 2008-2016, Chef Software, Inc.
+# Copyright:: 2008-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,58 +16,53 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-system_ruby = node['iptables']['system_ruby']
-
+Chef::Recipe.include Iptables::Cookbook::Helpers
 include_recipe 'iptables::_package'
 
-execute 'rebuild-iptables' do
-  command '/usr/sbin/rebuild-iptables'
-  action :nothing
-end
+Chef::Log.warn('The recipes inside iptables will be removed in the next major itteration (8.0.0), please change to resources provided by the iptables cookbook')
 
-directory '/etc/iptables.d' do
-  action :create
-end
+%w(iptables ip6tables).each do |ipt|
+  file = if ipt == 'iptables'
+           default_iptables_rules_file(:ipv4)
+         else
+           default_iptables_rules_file(:ipv6)
+         end
+  case node['platform_family']
+  when 'debian'
+    # debian based systems load iptables during the interface activation
+    template "/etc/network/if-pre-up.d/#{ipt}_load" do
+      source 'iptables_load.erb'
+      mode '0755'
+      variables(
+        iptables_save_file: file,
+        iptables_restore_binary: "/sbin/#{ipt}-restore"
+      )
+    end
 
-template '/usr/sbin/rebuild-iptables' do
-  source 'rebuild-iptables.erb'
-  mode '0755'
-  variables(
-    hashbang: ::File.exist?(system_ruby) ? system_ruby : '/opt/chef/embedded/bin/ruby'
-  )
-end
+    execute "reload #{ipt}" do
+      command "/etc/network/if-pre-up.d/#{ipt}_load"
+      subscribes :run, "template[#{file}]", :delayed
+      action :nothing
+    end
+  when 'rhel', 'fedora', 'amazon'
+    # iptables service exists only on RHEL based systems
+    file "/etc/sysconfig/#{ipt}" do
+      content '# Chef managed placeholder to allow iptables service to start'
+      action :create_if_missing
+    end
 
-# debian based systems load iptables during the interface activation
-template '/etc/network/if-pre-up.d/iptables_load' do
-  source 'iptables_load.erb'
-  mode '0755'
-  variables iptables_save_file: '/etc/iptables/general'
-  only_if { platform_family?('debian') }
-end
+    template "/etc/sysconfig/#{ipt}-config" do
+      source 'iptables-config.erb'
+      mode '600'
+      variables(
+        config: node['iptables']["#{ipt}_sysconfig"]
+      )
+    end
 
-# iptables service exists only on RHEL based systems
-if platform_family?('rhel') || platform_family?('fedora')
-  file '/etc/sysconfig/iptables' do
-    content '# Chef managed placeholder to allow iptables service to start'
-    action :create_if_missing
-  end
-
-  template '/etc/sysconfig/iptables-config' do
-    source 'iptables-config.erb'
-    mode '600'
-    variables config: node['iptables']['iptables_sysconfig']
-  end
-
-  template '/etc/sysconfig/ip6tables-config' do
-    source 'iptables-config.erb'
-    mode '600'
-    variables config: node['iptables']['ip6tables_sysconfig']
-  end
-
-  service 'iptables' do
-    action [:enable, :start]
-    supports status: true, start: true, stop: true, restart: true
-    not_if { platform_family?('fedora') }
+    service ipt do
+      supports status: true, start: true, stop: true, restart: true, reload: true
+      subscribes :restart, "template[#{file}]", :delayed
+      action [:enable, :start]
+    end
   end
 end

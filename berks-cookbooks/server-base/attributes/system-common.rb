@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: server-base
 # Recipe:: system-common
 #
-# Copyright (C) 2014 Pulselocker, Inc.
+# Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +21,7 @@
 #
 
 default['ntp']['servers'] = [
-    "0.pool.ntp.org",
-    "1.pool.ntp.org",
-    "2.pool.ntp.org"
+  "0.pool.ntp.org",
+  "1.pool.ntp.org",
+  "2.pool.ntp.org"
 ]

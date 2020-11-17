@@ -16,7 +16,7 @@
 
 #include <tunables/global>
 #include <tunables/ntpd>
-/usr/sbin/ntpd {
+/usr/sbin/ntpd flags=(attach_disconnected) {
   #include <abstractions/base>
   #include <abstractions/nameservice>
   #include <abstractions/user-tmp>
@@ -30,6 +30,7 @@
   capability sys_time,
   capability sys_nice,
 
+  network dgram,
   network inet dgram,
   network inet6 dgram,
   network inet stream,
@@ -69,10 +70,13 @@
   /var/log/ntpstats/clockstats* rwl,
   /var/log/ntpstats/loopstats*  rwl,
   /var/log/ntpstats/peerstats*  rwl,
+  /var/log/ntpstats/protostats* rwl,
   /var/log/ntpstats/rawstats*   rwl,
   /var/log/ntpstats/sysstats*   rwl,
 
   /{,var/}run/ntpd.pid w,
+  /{,var/}run/ntp.conf.dhcp r,
+  /{,var/}run/systemd/journal/dev-log rw,
 
   # samba4 ntp signing socket
   /{,var/}run/samba/ntp_signd/socket rw,

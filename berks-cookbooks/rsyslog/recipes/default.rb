@@ -2,7 +2,7 @@
 # Cookbook:: rsyslog
 # Recipe:: default
 #
-# Copyright:: 2009-2017, Chef Software, Inc.
+# Copyright:: 2009-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 #
 
 package node['rsyslog']['package_name']
-package "#{node['rsyslog']['package_name']}-relp" if node['rsyslog']['use_relp']
+package rsyslog_relp_package if node['rsyslog']['use_relp']
 
 if node['rsyslog']['enable_tls'] && node['rsyslog']['tls_ca_file']
   raise "Recipe rsyslog::default can not use 'enable_tls' with protocol '#{node['rsyslog']['protocol']}' (requires 'tcp')" unless node['rsyslog']['protocol'] == 'tcp'
@@ -35,6 +35,7 @@ directory node['rsyslog']['working_dir'] do
   owner node['rsyslog']['user']
   group node['rsyslog']['group']
   mode  '0700'
+  recursive true
 end
 
 execute 'validate_config' do
@@ -60,7 +61,7 @@ template "#{node['rsyslog']['config_prefix']}/rsyslog.d/50-default.conf" do
   mode    node['rsyslog']['config_files']['mode']
   notifies :run, 'execute[validate_config]'
   notifies :restart, "service[#{node['rsyslog']['service_name']}]"
-end
+end unless node['rsyslog']['default_conf_file'] == false
 
 # syslog needs to be stopped before rsyslog can be started on RHEL versions before 6.0
 if platform_family?('rhel') && node['platform_version'].to_i < 6

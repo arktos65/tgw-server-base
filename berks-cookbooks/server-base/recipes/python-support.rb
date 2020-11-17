@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: server-base
 # Recipe:: python-support
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
+# Copyright (C) 2018 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +24,11 @@
 node.override['poise-python']['install_python2'] = node['server-base']['python2']['install']
 node.override['poise-python']['install_python3'] = node['server-base']['python3']['install']
 
+# Workaround for poise-python v1.7 cookbook bug
+node.override['poise-python']['options']['pip_version'] = "18.0"
+
 # Update APT packages
 include_recipe 'apt'
 
 # Install Python environment
 include_recipe 'poise-python'
-
-

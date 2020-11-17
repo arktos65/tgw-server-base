@@ -2,11 +2,13 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   Exclude:
-    - lib/kitchen/driver/*
-    - lib/kitchen/driver/docker/*
-    - Vagrantfile
-  TargetRubyVersion: 2.3
-AlignParameters:
+    - 'lib/kitchen/driver/*'
+    - 'lib/kitchen/driver/docker/*'
+    - 'Vagrantfile'
+    - 'berks-cookbooks/**/*'
+    - 'bin/*'
+  TargetRubyVersion: 2.6
+Layout/ParameterAlignment:
   Enabled: false
 
 Encoding:

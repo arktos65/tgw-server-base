@@ -1,51 +1,49 @@
 {
   "name": "server-base",
-  "description": "Installs/Configures server-base",
-  "long_description": "Installs/Configures server-base",
-  "maintainer": "Pulselocker, Inc.",
-  "maintainer_email": "sean@pulselocker.com",
+  "description": "Installs/Configures base server environment",
+  "long_description": "Installs/Configures base server environment",
+  "maintainer": "TGW Consulting, LLC",
+  "maintainer_email": "sean@tgwconsulting.co",
   "license": "Apache-2.0",
   "platforms": {
-    "ubuntu": ">= 14.4.0"
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
   },
   "dependencies": {
     "apt": ">= 0.0.0",
+    "chef-client": ">= 0.0.0",
     "openssh": ">= 0.0.0",
     "ntp": ">= 0.0.0",
     "rsyslog": ">= 0.0.0",
     "build-essential": ">= 0.0.0",
+    "ruby_rbenv": ">= 0.0.0",
     "ruby_build": ">= 0.0.0",
+    "newrelic-infra": ">= 0.0.0",
     "rake": ">= 0.0.0",
     "zip": ">= 0.0.0",
-    "poise-python": ">= 0.0.0"
-  },
-  "recommendations": {
-  },
-  "suggestions": {
-  },
-  "conflicting": {
+    "poise-python": ">= 0.0.0",
+    "yum": ">= 0.0.0"
   },
   "providing": {
-  },
-  "replacing": {
-  },
-  "attributes": {
-  },
-  "groupings": {
+
   },
   "recipes": {
     "server-base": "Default recipe installs all base packages for a Linux server.",
     "server-base::system-common": "Common packages and tools for Linux servers.",
-    "server-base::python-support": "Installs Python 2.x environment.",
+    "server-base::python-support": "Installs Python 2.x/3.x environments.",
     "server-base::ruby-support": "Installs Ruby 2.x environment."
   },
-  "version": "2.1.2",
+  "version": "2.5.0",
   "source_url": "https://github.com/arktos65/server-base-cookbook",
   "issues_url": "https://github.com/arktos65/server-base-cookbook/issues",
   "privacy": false,
   "chef_versions": [
     [
-      "~> 12"
+      ">= 13"
     ]
   ],
   "ohai_versions": [
@@ -53,5 +51,6 @@
   ],
   "gems": [
 
-  ]
+  ],
+  "eager_load_libraries": true
 }

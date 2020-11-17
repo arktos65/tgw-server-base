@@ -2,7 +2,7 @@
 # Cookbook:: iptables
 # Recipe:: default
 #
-# Copyright:: 2008-2016, Chef Software, Inc.
+# Copyright:: 2008-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,30 +19,27 @@
 
 include_recipe 'iptables::_package'
 
-service 'iptables' do
-  action [:disable, :stop]
-  supports status: true, start: true, stop: true, restart: true
-  only_if { node['platform_family'] == 'rhel' }
-end
+Chef::Log.warn('The recipes inside iptables will be removed in the next major itteration (8.0.0), please change to resources provided by the iptables cookbook')
 
-# Necessary so that if iptables::disable is used and then later
-# it is re-enabled without any rules changes, the templates will run the rebuilt script
-directory '/etc/iptables.d' do
-  action :delete
-  recursive true
-  notifies :run, 'execute[iptablesFlush]', :immediately
-end
-
-%w(/etc/sysconfig/iptables /etc/sysconfig/iptables.fallback).each do |f|
-  file f do
-    content '# iptables rules files cleared by chef via iptables::disabled'
-    only_if { node['platform_family'] == 'rhel' }
-    notifies :run, 'execute[iptablesFlush]', :immediately
+%w(iptables ip6tables).each do |ipt|
+  service ipt do
+    action [:disable, :stop]
+    delayed_action :stop
+    supports status: true, start: true, stop: true, restart: true
+    only_if { platform_family?('rhel', 'fedora', 'amazon') }
   end
-end
 
-# Flush and delete iptables rules
-execute 'iptablesFlush' do
-  command 'iptables -F'
-  action  :nothing
+  ["/etc/sysconfig/#{ipt}", "/etc/sysconfig/#{ipt}.fallback"].each do |f|
+    file f do
+      content '# iptables rules files cleared by chef via iptables::disabled'
+      only_if { platform_family?('rhel', 'fedora', 'amazon') }
+      notifies :run, "execute[flush #{ipt}]", :immediately
+    end
+  end
+
+  # Flush and delete iptables rules
+  execute "flush #{ipt}" do
+    command "#{ipt} -F"
+    action :nothing
+  end
 end

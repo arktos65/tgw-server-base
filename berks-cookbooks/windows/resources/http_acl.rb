@@ -18,13 +18,12 @@
 # limitations under the License.
 #
 
-include Chef::Mixin::ShellOut
 include Windows::Helper
 
-property :url, String, name_property: true, required: true
+property :url, String, name_property: true
 property :user, String
 property :sddl, String
-property :exists, [true, false], desired_state: true
+property :exists, [true, false]
 
 # See https://msdn.microsoft.com/en-us/library/windows/desktop/cc307236%28v=vs.85%29.aspx for netsh info
 
@@ -36,7 +35,7 @@ load_current_value do |desired|
     exists true
     url desired.url
     # Checks first for sddl, because it generates user(s)
-    sddl_match = cmd_out.match(/SDDL:\s*(?<sddl>.+)/)
+    sddl_match = cmd_out.match(/SDDL:\s*(?<sddl>\S+)/)
     if sddl_match
       sddl sddl_match['sddl']
     else

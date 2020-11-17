@@ -28,7 +28,7 @@ Installs and configures OpenSSH client and daemon.
 
 ### default
 
-Installs openssh packages, manages the sshd config file, and starts/enables the sshd service.
+Installs openssh packages, manages the sshd config file, configure trusted ca keys, configure revoked keys, and starts/enables the sshd service.
 
 ### iptables
 
@@ -137,6 +137,29 @@ Not to be used with `node['openssh']['listen_interfaces']`.
   }
 }
 ```
+### Configure Trusted User CA Keys.
+
+```json
+"openssh": {
+  "ca_keys": [
+    "ssh-rsa key... ca_id_1",
+    "ssh-rsa key... ca_id_2"
+  ]
+}
+```
+
+### Configure Revoked Keys.
+
+```json
+"openssh": {
+  "server": {
+    "revoked_keys": [
+      "ssh-rsa key... user_key_1",
+      "ssh-rsa key... user_key_2"
+    ]
+  }
+}
+```
 
 ### Host-specific configurations with hashes.
 
@@ -182,11 +205,36 @@ StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 ```
 
+### SSH Subsystems
+
+Configure multiple SSH subsystems (e.g. sftp, netconf):
+
+```json
+"openssh": {
+  "server": {
+    "subsystem": {
+      "sftp": "/usr/lib/openssh/sftp-server",
+      "appX": "/usr/sbin/appX"
+    }
+  }
+}
+```
+
+Former declaration of single subsystem:
+
+```json
+"openssh": {
+  "server": {
+    "subsystem": "sftp /usr/lib/openssh/sftp-server"
+  }
+}
+```
+
 ## License & Authors
 
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
-**Copyright:** 2008-2016, Chef Software, Inc.
+**Copyright:** 2008-2019, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");

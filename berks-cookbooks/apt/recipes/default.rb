@@ -2,8 +2,8 @@
 # Cookbook:: apt
 # Recipe:: default
 #
-# Copyright:: 2008-2017, Chef Software, Inc.
-# Copyright:: 2009-2017, Bryan McLellan <btm@loftninjas.org>
+# Copyright:: 2008-2019, Chef Software, Inc.
+# Copyright:: 2009-2019, Bryan McLellan <btm@loftninjas.org>
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ end
 if node['apt']['compile_time_update'] && apt_installed?
   apt_update('compile time') do
     frequency node['apt']['periodic_update_min_delay']
+    ignore_failure true
   end.run_action(:periodic)
 end
 
@@ -41,8 +42,7 @@ apt_update 'periodic' do
 end
 
 # For other recipes to call to force an update
-execute 'apt-get update' do
-  command 'apt-get update'
+execute 'apt-get update' do # rubocop: disable ChefModernize/ExecuteAptUpdate
   ignore_failure true
   action :nothing
   notifies :touch, 'file[/var/lib/apt/periodic/update-success-stamp]', :immediately
@@ -92,6 +92,6 @@ template '/etc/apt/apt.conf.d/10recommends' do
   only_if { apt_installed? }
 end
 
-package 'apt-transport-https' do
+package %w(apt-transport-https gnupg dirmngr) do
   only_if { apt_installed? }
 end
