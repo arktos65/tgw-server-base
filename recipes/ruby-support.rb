@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: server-base
+# Cookbook Name:: tgw-server-base
 # Recipe:: ruby-support
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
@@ -24,7 +24,7 @@ include_recipe "apt"
 
 # Install and configure runtime environment dependencies
 # rbenv_system_install 'system'
-ruby_build_install node['server-base']['ruby']['build']
-ruby_build_definition node['server-base']['ruby']['version']
+ruby_build_install node['tgw-server-base']['ruby']['build']
+ruby_build_definition node['tgw-server-base']['ruby']['version']
 
 include_recipe "rake"

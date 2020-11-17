@@ -13,5 +13,5 @@ platforms:
 
 suites:
   - name: default
-    run_list: recipe[server-base::default]
+    run_list: recipe[tgw-server-base::default]
     attributes:

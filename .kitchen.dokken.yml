@@ -25,9 +25,9 @@ platforms:
 
 suites:
   - name: default
-    run_list: recipe[server-base::default]
+    run_list: recipe[tgw-server-base::default]
     attributes:
-      server-base:
+      tgw-server-base:
         install_dnsmasq: true
         install_chef_client: true
         install_kubeadm: true

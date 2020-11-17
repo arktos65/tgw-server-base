@@ -1,4 +1,4 @@
-SERVER-BASE CHANGELOG
+tgw-server-base CHANGELOG
 =====================
 
 2.5.0 (18-Nov-2020)
@@ -6,6 +6,7 @@ SERVER-BASE CHANGELOG
 - Refactored Ruby environment recipe to use ruby_build.
 - Added New Relic infrastructure installer.
 - Deprecated `kubernetes` recipe as it's replaced with another cookbook.
+- Renamed cookbook from `tgw-server-base` to `tgw-tgw-server-base`.
 
 2.4.2 (22-Jan-2020)
 -------------------

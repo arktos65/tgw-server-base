@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: server-base
+# Cookbook Name:: tgw-server-base
 # Recipe:: system-common
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.

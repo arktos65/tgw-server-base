@@ -1,7 +1,7 @@
-SERVER-BASE COOKBOOK
+tgw-server-base COOKBOOK
 ====================
 
-[![Build Status](https://secure.travis-ci.org/arktos65/server-base-cookbook.png)](http://travis-ci.org/arktos65/server-base-cookbook)
+[![Build Status](https://secure.travis-ci.org/arktos65/tgw-server-base-cookbook.png)](http://travis-ci.org/arktos65/tgw-server-base-cookbook)
 
 This wrapper cookbook installs packages required on Linux servers.
 
@@ -16,24 +16,24 @@ studying the files in the attributes directory.
 
 |Attribute   |Default Value   |Description   |
 |---|---|---|
-| node['server-base']['python2']['install'] | true | Installs Python 2.x interpreter. |
-| node['server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
-| node['server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
-| node['server-base']['install_chef_client'] | false | Installs and configures chef-client as a service if true. |
-| node['server-base']['ruby']['version'] | 2.6.6 | Version of Ruby interpreter to install. |
-| node['server-base']['new_relic']['install'] | false | Install New Relic infrastructure agent. |
-| node['server-base']['new_relic']['key'] | replace me | Override with your private New Relic key. |
+| node['tgw-server-base']['python2']['install'] | true | Installs Python 2.x interpreter. |
+| node['tgw-server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
+| node['tgw-server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
+| node['tgw-server-base']['install_chef_client'] | false | Installs and configures chef-client as a service if true. |
+| node['tgw-server-base']['ruby']['version'] | 2.6.6 | Version of Ruby interpreter to install. |
+| node['tgw-server-base']['new_relic']['install'] | false | Install New Relic infrastructure agent. |
+| node['tgw-server-base']['new_relic']['key'] | replace me | Override with your private New Relic key. |
 
 ## Usage
 
-### server-base::default
+### tgw-server-base::default
 
-Include `server-base` in your node's `run_list`:
+Include `tgw-server-base` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[server-base::default]"
+    "recipe[tgw-server-base::default]"
   ]
 }
 ```

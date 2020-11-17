@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: server-base
+# Cookbook Name:: tgw-server-base
 # Recipe:: default
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
@@ -24,10 +24,10 @@
 node.override['apt']['compile_time_update'] = true
 
 # Runlist of recipes
-include_recipe 'server-base::system-common'
-include_recipe 'server-base::python-support'
-include_recipe 'server-base::ruby-support'
+include_recipe 'tgw-server-base::system-common'
+include_recipe 'tgw-server-base::python-support'
+include_recipe 'tgw-server-base::ruby-support'
 
-include_recipe 'server-base::dnsmasq' if node['server-base']['install_dnsmasq']
+include_recipe 'tgw-server-base::dnsmasq' if node['tgw-server-base']['install_dnsmasq']
 
-include_recipe 'server-base::client' if node['server-base']['install_chef_client']
+include_recipe 'tgw-server-base::client' if node['tgw-server-base']['install_chef_client']

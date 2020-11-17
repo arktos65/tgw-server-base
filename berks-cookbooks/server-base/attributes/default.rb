@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: server-base
+# Cookbook Name:: tgw-server-base
 # Recipe:: default
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
@@ -20,20 +20,20 @@
 # limitations under the License.
 #
 
-default['server-base']['install_dnsmasq'] = false
-default['server-base']['install_chef_client'] = false
+default['tgw-server-base']['install_dnsmasq'] = false
+default['tgw-server-base']['install_chef_client'] = false
 
 # Python environment
-default['server-base']['python2']['install'] = true
-default['server-base']['python3']['install'] = true
+default['tgw-server-base']['python2']['install'] = true
+default['tgw-server-base']['python3']['install'] = true
 
 # Ruby environment
-default['server-base']['ruby']['version'] = '2.6.6'
-default['server-base']['ruby']['build'] = 'v20201005'
+default['tgw-server-base']['ruby']['version'] = '2.6.6'
+default['tgw-server-base']['ruby']['build'] = 'v20201005'
 
 # Testing overrides
-default['server-base']['skip_selinux'] = false
+default['tgw-server-base']['skip_selinux'] = false
 
 # New Relic
-default['server-base']['new_relic']['install'] = true
-default['server-base']['new_relic']['key'] = 'replace me'
+default['tgw-server-base']['new_relic']['install'] = true
+default['tgw-server-base']['new_relic']['key'] = 'replace me'

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: server-base
+# Cookbook Name:: tgw-server-base
 # Recipe:: python-support
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
@@ -21,8 +21,8 @@
 #
 
 # Set installation requirements via attributes
-node.override['poise-python']['install_python2'] = node['server-base']['python2']['install']
-node.override['poise-python']['install_python3'] = node['server-base']['python3']['install']
+node.override['poise-python']['install_python2'] = node['tgw-server-base']['python2']['install']
+node.override['poise-python']['install_python3'] = node['tgw-server-base']['python3']['install']
 
 # Workaround for poise-python v1.7 cookbook bug
 node.override['poise-python']['options']['pip_version'] = "18.0"
