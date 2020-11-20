@@ -2,7 +2,7 @@
 
 #
 # Cookbook Name:: tgw-server-base
-# Recipe:: client
+# Recipe:: new-relic
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
 # Copyright (C) 2018-2020 TGW Consulting, LLC.
@@ -20,4 +20,4 @@
 # limitations under the License.
 #
 
-include_recipe 'chef-client'
+include_recipe 'newrelic-infra::default'

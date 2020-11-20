@@ -5,7 +5,7 @@
 # Recipe:: ruby-support
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
-# Copyright (C) 2018 TGW Consulting, LLC.
+# Copyright (C) 2018-2020 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@
 # limitations under the License.
 #
 
-include_recipe "apt"
+include_recipe 'apt'
 
 # Install and configure runtime environment dependencies
 # rbenv_system_install 'system'
 ruby_build_install node['tgw-server-base']['ruby']['build']
 ruby_build_definition node['tgw-server-base']['ruby']['version']
 
-include_recipe "rake"
+include_recipe 'rake'

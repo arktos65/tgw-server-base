@@ -5,7 +5,7 @@
 # Recipe:: default
 #
 # Copyright (C) 2014-2017 Pulselocker, Inc.
-# Copyright (C) 2018 TGW Consulting, LLC.
+# Copyright (C) 2018-2020 TGW Consulting, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,3 +31,5 @@ include_recipe 'tgw-server-base::ruby-support'
 include_recipe 'tgw-server-base::dnsmasq' if node['tgw-server-base']['install_dnsmasq']
 
 include_recipe 'tgw-server-base::client' if node['tgw-server-base']['install_chef_client']
+
+include_recipe 'tgw-server-base::new-relic' if node['tgw-server-base']['new_relic']['install']
