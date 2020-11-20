@@ -20,4 +20,5 @@
 # limitations under the License.
 #
 
+node.default['newrelic_infra']['config']['license_key'] = '980a709aebec426cce38e319822292b39af3NRAL'
 include_recipe 'newrelic-infra::default'
