@@ -1,6 +1,10 @@
 tgw-server-base CHANGELOG
 =====================
 
+2.5.1 (20-Nov-2020)
+-------------------
+- Bug fixes.
+
 2.5.0 (18-Nov-2020)
 -------------------
 - Refactored Ruby environment recipe to use ruby_build.
