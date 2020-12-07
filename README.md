@@ -1,8 +1,6 @@
 tgw-server-base COOKBOOK
 ====================
 
-[![Build Status](https://secure.travis-ci.org/arktos65/tgw-server-base-cookbook.png)](http://travis-ci.org/arktos65/tgw-server-base-cookbook)
-
 This wrapper cookbook installs packages required on Linux servers.
 
 ## Supported Platforms
@@ -20,6 +18,8 @@ studying the files in the attributes directory.
 | node['tgw-server-base']['python3']['install'] | true | Installs Python 3.x interpreter. |
 | node['tgw-server-base']['install_dnsmasq'] | false | Installs DNS service if true. |
 | node['tgw-server-base']['install_chef_client'] | false | Installs and configures chef-client as a service if true. |
+| node['tgw-server-base']['php']['install'] | false | Install PHP interpreter if true. |
+| node['tgw-server-base']['ruby']['install'] | true | Install Ruby interpreter if true. |
 | node['tgw-server-base']['ruby']['version'] | 2.6.6 | Version of Ruby interpreter to install. |
 | node['tgw-server-base']['new_relic']['install'] | false | Install New Relic infrastructure agent. |
 | node['tgw-server-base']['new_relic']['key'] | replace me | Override with your private New Relic key. |

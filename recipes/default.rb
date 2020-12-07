@@ -26,7 +26,8 @@ node.override['apt']['compile_time_update'] = true
 # Runlist of recipes
 include_recipe 'tgw-server-base::system-common'
 include_recipe 'tgw-server-base::python-support'
-include_recipe 'tgw-server-base::ruby-support'
+include_recipe 'tgw-server-base::ruby-support' if node['tgw-server-base']['ruby']['install']
+include_recipe 'php::default' if node['tgw-server-base']['php']['install']
 
 include_recipe 'tgw-server-base::dnsmasq' if node['tgw-server-base']['install_dnsmasq']
 

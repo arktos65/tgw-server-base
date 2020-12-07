@@ -28,8 +28,12 @@ default['tgw-server-base']['python2']['install'] = true
 default['tgw-server-base']['python3']['install'] = true
 
 # Ruby environment
+default['tgw-server-base']['ruby']['install'] = true
 default['tgw-server-base']['ruby']['version'] = '2.6.6'
 default['tgw-server-base']['ruby']['build'] = 'v20201005'
+
+# PHP environment
+default['tgw-server-base']['php']['install'] = false
 
 # Testing overrides
 default['tgw-server-base']['skip_selinux'] = false
