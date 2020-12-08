@@ -1,6 +1,13 @@
 tgw-server-base CHANGELOG
 =====================
 
+2.6.0 (07-Dec-2020)
+-------------------
+- Add support for installing PHP and related libraries.
+- Added attribute to choose whether to install Ruby or not.
+- Updated Test Kitchen to use Chef Solo v15 per Ruby cookbook requirements.
+- Added test suite for language install testing only.
+
 2.5.1 (20-Nov-2020)
 -------------------
 - Bug fixes.

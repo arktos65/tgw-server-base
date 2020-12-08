@@ -5,7 +5,7 @@ driver:
 provisioner:
   name: chef_solo
   product_name: chef
-  product_version: 13
+  product_version: 15
 
 platforms:
   - name: ubuntu-16.04
@@ -19,3 +19,18 @@ suites:
         install_dnsmasq: true
         install_chef_client: true
         install_kubeadm: true
+  - name: languages
+    run_list: recipe[tgw-server-base::default]
+    attributes:
+      tgw-server-base:
+        install_dnsmasq: false
+        install_chef_client: false
+        install_kubeadm: false
+        python2:
+          install: true
+        python3:
+          install: true
+        php:
+          install: true
+        ruby:
+          install: true
